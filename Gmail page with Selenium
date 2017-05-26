@@ -1,0 +1,35 @@
+package Chrome;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Gmailpage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Leenatha\\Downloads\\chromedriver_win32\\chromedriver.exe");
+	    ChromeDriver driver=new ChromeDriver();
+	    driver.get("https://accounts.google.com/SignUp?hl=en/");
+		driver.findElement(By.xpath("//*[@id='FirstName']")).sendKeys("Linatha");
+		driver.findElement(By.xpath("//*[@id='LastName']")).sendKeys("Vaddep");
+	    driver.findElement(By.xpath("//*[@id='GmailAddress']")).sendKeys("linatha123456789");
+	    driver.findElement(By.xpath("//*[@id='Passwd']")).sendKeys("Hello!123");
+	    driver.findElement(By.xpath("//*[@id='PasswdAgain']")).sendKeys("Hello!123");;
+	    driver.findElement(By.xpath("//*[@id='BirthMonth']/div")).sendKeys("May");
+	    driver.findElement(By.id("BirthDay")).sendKeys("13");
+	    //driver.findElement(By.xpath("//*[@id='birthday-placeholder']")).sendKeys("13");
+	    driver.findElement(By.xpath("//*[@id='BirthYear']")).sendKeys("1992");
+	    driver.findElement(By.xpath("//*[@id='Gender']/div")).sendKeys("female");
+	    driver.findElement(By.xpath("//*[@id='RecoveryPhoneNumber']")).sendKeys("8324066476");
+	    driver.findElement(By.xpath("//*[@id='RecoveryEmailAddress']")).sendKeys("leenathavaddep135@gmail.com");
+	    driver.findElement(By.xpath("//*[@id='submitbutton']")).click();
+	
+	
+	
+	
+	
+	}
+
+}
