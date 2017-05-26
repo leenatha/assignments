@@ -1,0 +1,29 @@
+package Chrome;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Javaalert {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Leenatha\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("http://www.tizag.com/javascriptT/javascriptalert.php");
+		driver.findElement(By.xpath("/html/body/table[3]/tbody/tr[1]/td[2]/table/tbody/tr/td/div[4]/form/input")).click();
+		// to text on java alert box is as expected
+		System.out.println(driver.switchTo().alert().getText());
+		
+		// for +ve senerio to handle ok,yes,etc
+		driver.switchTo().alert().accept();
+		// -ve senario cancel
+		//driver.switchTo().alert().dismiss();
+		// if edit box is there
+		//driver.switchTo().alert().sendKeys();
+		
+		
+		
+
+	}
+
+}
