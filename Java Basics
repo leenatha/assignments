@@ -1,0 +1,124 @@
+Multiplication of numbers
+
+package javabasics;
+import java.util.Scanner;
+
+public class twoinputs {
+	
+	public static void main(String args[])
+	{
+		/*
+		 Input first number: 25
+Input second number: 5
+		 */
+		Scanner in = new Scanner(System.in);
+		   
+		  System.out.print("Input first number: ");
+		  int num1 = in.nextInt();
+		   
+		  System.out.print("Input second number: ");
+		  int num2 = in.nextInt();
+		   
+		  System.out.println(num1 + " x " + num2 + " = " + num1 * num2);
+		 }	
+	}
+-----------------------------------------------------------------------------------------------------
+Sum of 2 numbers
+package javabasics;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class sum {
+
+	public static void main(String args[]) throws Exception {
+	
+		//public static void main(String args[])throws Exception
+		{
+		int a,b,c;
+		BufferedReader br= new BufferedReader( new InputStreamReader(System.in));
+		System.out.println("Enter the two numbers to add:");
+		a=Integer.parseInt(br.readLine());
+		b=Integer.parseInt(br.readLine());
+		c = a+b;
+		System.out.println("\nSum of two numbers:"+ c);
+		}
+
+		
+	}
+}
+----------------------------------------------------------------------------------------------------------
+Reverse of a string 
+package javabasics;
+
+public class reverseString 
+{
+ public static void main(String[] args)
+ 
+ {
+  String input="AliveisAwesome";
+  StringBuilder input1 = new StringBuilder();
+  input1.append(input);
+  input1=input1.reverse(); 
+  for (int i=0;i<input1.length();i++)
+  System.out.print(input1.charAt(i));  
+ }
+ 
+}
+------------------------------------------------------------------------------------------------
+Reverse of number
+package javabasics;
+
+import java.util.Scanner;
+
+public class ReverseNumber {
+
+	public static void main(String args[])
+	   {
+	      int n, reverse = 0;
+	 
+	      System.out.println("Enter the number to reverse");
+	      Scanner in = new Scanner(System.in);
+	      n = in.nextInt();
+	 
+	      while( n != 0 )
+	      {
+	          reverse = reverse * 10;
+	          reverse = reverse + n%10;
+	          n = n/10;
+	      }
+	 
+	      System.out.println("Reverse of entered number is "+reverse);
+	   }
+}
+----------------------------------------------------------------------------------------------
+Prime number
+package javabasics;
+
+import java.util.Scanner;
+
+public class Prime {
+
+	public static void main(String[] args) {
+
+		int n;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number");
+		n=sc.nextInt();
+		for(int i=2;i<9;i++)
+			
+			{
+			if(n%i==0)
+			
+			{
+			System.out.println("it is not prime " + n);	
+			}
+			else
+			{
+				System.out.println("it is a prime " + n);
+			}
+	}
+ sc.close();
+
+}
+}
