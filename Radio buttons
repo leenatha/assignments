@@ -1,0 +1,25 @@
+package Chrome;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class radibuttons {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.gecko.driver", "C:\\geckodriver-v0.13.0-win64\\geckodriver.exe");
+		WebDriver driver=new FirefoxDriver();
+	driver.get("https://www.hscripts.com/tutorials/html/form-radiobutton.php");
+	driver.findElement(By.xpath("//input[@name='myradio']")).click();
+	int count =driver.findElements(By.xpath("//input[@name='myradio']")).size();
+	for(int i=0;i<count;i++)
+	{
+		driver.findElements(By.xpath("//input[@name='myradio']")).get(i).click();
+		
+	}
+	
+	}
+
+}
