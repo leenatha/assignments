@@ -1,0 +1,58 @@
+package Chrome;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.By.ById;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Checkbox {
+
+	public static void main(String[] args) {
+//Dynamic dropdown
+		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Leenatha\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Leenatha\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        WebDriver driver=new ChromeDriver();
+        driver.get("http://www.spicejet.com/");
+        driver.findElement(ById.xpath("//input[@id='ctl00_mainContent_ddl_originStation1_CTXT']")).click();
+        driver.findElement(By.xpath("//a[@value='HYD']")).click();
+        
+        //driver.findElement(By.xpath("//input[@id='ctl00_mainContent_ddl_destinationStation1_CTXT']")).click();
+        driver.findElement(By.xpath("//a[@value='BLR']")).click();  
+        driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[4]/td[3]/a")).click();
+        driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[2]/table/tbody/tr[2]/td[2]/a")).click();
+      //*[@id="ui-datepicker-div"]/div[2]/table/tbody/tr[2]/td[2]/a   date
+      //*[@id="ui-datepicker-div"]/div[2]/table/tbody/tr[2]/td[2]/a
+        
+        
+        
+        //Staticdrop down Select class is used, creat obj for class and access method 
+//using objet.method
+       // Select dropdown=((WebElement) new Select(driver.findElement(By.xpath("//select[@id='ctl00_mainContent_ddl_Adult']")))).click();
+        
+        Select dropdown=new Select(driver.findElement(By.xpath("//select[@id='ctl00_mainContent_ddl_Adult']")));
+        dropdown.selectByIndex(5);
+        //dropdown.selectByVisibleText("7 Adults");
+        //dropdown.selectByValue("9");
+        Select dropdown1=new Select(driver.findElement(By.xpath("//select[@id='ctl00_mainContent_ddl_Child']")));
+        dropdown1.selectByIndex(3);
+        Select dropdown2=new Select(driver.findElement(By.xpath("//select[@id='ctl00_mainContent_ddl_Infant']")));
+        dropdown2.selectByValue("2");  
+	     Select dropdown3=new Select(driver.findElement(By.xpath("//select[@id='ctl00_mainContent_DropDownListCurrency']")));
+	     dropdown3.selectByValue("INR");
+	
+	     //System.out.println(driver.findElement(By.xpath("//input[@id='ctl00_mainContent_chk_StudentDiscount']")).isSelected());
+	     driver.findElement(By.xpath("//input[@id='ctl00_mainContent_chk_StudentDiscount']")).click();
+	     //System.out.println(driver.findElement(By.xpath("//input[@id='ctl00_mainContent_chk_StudentDiscount']")).isSelected());
+	     
+	      driver.findElement(By.xpath("//input[@id='ctl00_mainContent_btn_FindFlights']")).click();
+      
+	
+	
+	
+	}
+
+}
